@@ -4,7 +4,7 @@ name: FoodPriceWatch Pipeline
 on:
   schedule:
     # Every Tuesday at 2:00 AM Philippine time
-    - cron: "0 18 * * 1"
+    - cron: "0 16 * * 1"
   workflow_dispatch:
 
 permissions:
