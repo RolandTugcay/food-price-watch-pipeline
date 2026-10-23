@@ -2,6 +2,26 @@
 
 An automated data engineering project that collects, validates, stages, and transforms food price data for the Philippines using the World Food Programme (WFP) dataset. The pipeline uses Python, Pandas, SQLAlchemy, PostgreSQL, Supabase, and GitHub Actions.
 
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Technology Stack](#technology-stack)
+- [Data Source](#data-source)
+- [Data Pipeline](#data-pipeline)
+- [Database Design](#database-design)
+- [Project Structure](#project-structure)
+- [Local Setup](#local-setup)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Create a Virtual Environment](#2-create-a-virtual-environment)
+  - [3. Install Dependencies](#3-install-dependencies)
+  - [4. Configure Environment Variables](#4-configure-environment-variables)
+  - [5. Run the Pipeline](#5-run-the-pipeline)
+- [Supabase Configuration](#supabase-configuration)
+- [Automated Execution with GitHub Actions](#automated-execution-with-github-actions)
+  - [Schedule](#schedule)
+- [Security and Reliability](#security-and-reliability)
+- [Project Goal](#project-goal)
+
 ## Project Overview
 
 FoodPriceWatch automates the processing of food price observations from the WFP food prices dataset for the Philippines.
@@ -187,15 +207,6 @@ Scheduled workflow runs may be delayed by GitHub Actions, so the configured time
 - The raw staging table is separated from the normalized data tables.
 - PostgreSQL access should follow the principle of least privilege.
 - Database transformations should be designed to handle repeated executions safely and avoid unintended duplicate records.
-
-## Future Improvements
-
-- Build an interactive food price monitoring dashboard.
-- Add data quality checks and validation reports.
-- Improve logging and pipeline failure notifications.
-- Add automated tests for transformations and database loading.
-- Track price changes over time by market and commodity.
-- Document and monitor duplicate-handling and update strategies.
 
 ## Project Goal
 
