@@ -68,7 +68,7 @@ food-price-watch-pipeline/
 ├── src/
     ├── download_data.py
     ├── load_raw.py
-    ├── logger_config_raw.py
+    ├── logger_config.py
     ├── run_pipeline.py
     ├── transform_data.py
     ├── validate_data.py
