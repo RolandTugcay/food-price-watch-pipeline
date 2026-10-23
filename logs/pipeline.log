@@ -1,0 +1,33 @@
+2026-10-22 18:32:08 | INFO     | foodpricewatch.load | Stage 3/4: PostgreSQL load started | rows=238623 | table=public.staging_food_prices
+2026-10-22 18:32:16 | INFO     | foodpricewatch.load | Stage 3/4: PostgreSQL load successful | rows=238623
+2026-10-22 18:32:16 | INFO     | food_price_watch.pipeline | Pipeline succeeded | run_id=20261022T103156Z | duration_seconds=19.63
+2026-10-22 18:37:37 | INFO     | food_price_watch.pipeline | Pipeline started | run_id=20261022T103737Z
+2026-10-22 18:37:37 | INFO     | food_price_watch.pipeline | Stage 1/4: Download started
+2026-10-22 18:37:46 | INFO     | food_price_watch.download | Stage 1/4: Download completed | rows=238623 | status=success
+2026-10-22 18:37:46 | INFO     | food_price_watch.pipeline | Stage 2/4: Validation started
+2026-10-22 18:37:46 | INFO     | foodpricewatch.validation | Stage 2/4: Validation completed | status=success | rows=238623 | errors=0 | warnings=0
+2026-10-22 18:37:46 | INFO     | food_price_watch.pipeline | Stage 3/4: Database loading started
+2026-10-22 18:37:46 | INFO     | foodpricewatch.load | Stage 3/4: PostgreSQL load started | rows=238623 | table=public.staging_food_prices
+2026-10-22 18:37:54 | INFO     | foodpricewatch.load | Stage 3/4: PostgreSQL load successful | rows=238623
+2026-10-22 18:37:54 | INFO     | food_price_watch.pipeline | Pipeline succeeded | run_id=20261022T103737Z | duration_seconds=16.72
+2026-10-22 18:47:36 | INFO     | food_price_watch.pipeline | Pipeline started | run_id=20261022T104736Z
+2026-10-22 18:47:36 | INFO     | food_price_watch.pipeline | Stage 1/4: Download started
+2026-10-22 18:47:50 | INFO     | food_price_watch.download | Stage 1/4: Download completed | rows=238623 | status=success
+2026-10-22 18:47:50 | INFO     | food_price_watch.pipeline | Stage 2/4: Validation started
+2026-10-22 18:47:50 | INFO     | food_price_watch.validation | Stage 2/4: Validation completed | status=success | rows=238623 | errors=0 | warnings=0
+2026-10-22 18:47:50 | INFO     | food_price_watch.pipeline | Stage 3/4: Database loading started
+2026-10-22 18:47:50 | INFO     | food_price_watch.load | Stage 3/4: PostgreSQL load started | rows=238623 | table=public.staging_food_prices
+2026-10-22 18:47:58 | INFO     | food_price_watch.load | Stage 3/4: PostgreSQL load successful | rows=238623
+2026-10-22 18:47:58 | INFO     | food_price_watch.pipeline | Pipeline succeeded | run_id=20261022T104736Z | duration_seconds=22.37
+2026-10-22 19:03:12 | INFO     | food_price_watch.pipeline | Pipeline started | run_id=20261022T110312Z
+2026-10-22 19:03:12 | INFO     | food_price_watch.pipeline | Stage 1/4: Download started
+2026-10-22 19:03:32 | INFO     | food_price_watch.download | Stage 1/4: Download completed | rows=238623 | status=success
+2026-10-22 19:03:32 | INFO     | food_price_watch.pipeline | Stage 2/4: Validation started
+2026-10-22 19:03:32 | INFO     | food_price_watch.validation | Stage 2/4: Validation completed | status=success | rows=238623 | errors=0 | warnings=0
+2026-10-22 19:03:32 | INFO     | food_price_watch.pipeline | Stage 3/4: Database loading started
+2026-10-22 19:03:32 | INFO     | food_price_watch.load | Stage 3/4: PostgreSQL load started | rows=238623 | table=public.staging_food_prices
+2026-10-22 19:03:40 | INFO     | food_price_watch.load | Stage 3/4: PostgreSQL load successful | rows=238623
+2026-10-22 19:03:40 | INFO     | food_price_watch.pipeline | Stage 4/4: Transformation started
+2026-10-22 19:03:40 | INFO     | foodpricewatch.transform | Stage 4/4: Transformation started | staging_rows=238623
+2026-10-22 19:03:47 | INFO     | foodpricewatch.transform | Stage 4/4: Transformation completed | table_counts={'markets': 108, 'categories': 6, 'commodities': 73, 'price_observations': 238623}
+2026-10-22 19:03:47 | INFO     | food_price_watch.pipeline | Pipeline succeeded | run_id=20261022T110312Z | duration_seconds=35.57
