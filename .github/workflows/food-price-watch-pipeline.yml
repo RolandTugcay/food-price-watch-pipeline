@@ -34,3 +34,28 @@ jobs:
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: python src/run_pipeline.py
+
+      - name: Get finished date
+        id: get_date
+        run: echo "FINISHED_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+
+      - name: Send finished date to Supabase
+        if: always()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          # 1. Generate the current ISO 8601 timestamp
+          FINISHED_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          
+          # 2. Send the API request to Supabase
+          curl -X POST "$SUPABASE_URL/github_runs" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: resolution=merge-duplicates" \
+            -d '{
+              "github_run_id": "${{ github.run_id }}",
+              "finished_at": "'"$FINISHED_DATE"'",
+              "status": "${{ job.status }}"
+            }'
